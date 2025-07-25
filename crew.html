@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <script defer src="./scripts/main.js"></script>
-</head>
-<body>
-    <main class="min-h-[100vh] bg-[url('/assets/crew/background-crew-mobile.jpg')] bg-center bg-no-repeat bg-cover md:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')]" >
+  </head>
+  <body>
+    <main
+      class="min-h-[100vh] bg-[url('../assets/crew/background-crew-mobile.jpg')] bg-center bg-no-repeat bg-cover md:bg-[url('../assets/crew/background-crew-tablet.jpg')] lg:bg-[url('../assets/crew/background-crew-desktop.jpg')]"
+    >
       <!-- Nav Bar -->
       <nav class="nav">
         <div class="nav__logo">
@@ -16,23 +18,240 @@
         </div>
 
         <div class="nav__toggler">
-          <button class="nav__menu__open"  type="button" aria-label="open menu">
+          <button class="nav__menu__open" type="button" aria-label="open menu">
             <img src="./assets/shared/icon-hamburger.svg" alt="open menu" />
           </button>
         </div>
 
         <div class="nav__menu nav__menu--active" aria-hidden="true">
-          <button class="nav__menu__close" type="button" aria-hidden="true" aria-label="close menu">
+          <button
+            class="nav__menu__close"
+            type="button"
+            aria-hidden="true"
+            aria-label="close menu"
+          >
             <img src="./assets/shared/icon-close.svg" alt="close menu" />
           </button>
           <ol role="menu">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./destination.html">Destination</a></li>
-            <li class="active" ><a href="#">Crew</a></li>
+            <li class="active"><a href="#">Crew</a></li>
             <li><a href="./technology.html">Technology</a></li>
           </ol>
         </div>
       </nav>
+
+      <!-- Crew Section -->
+      <h1
+        class="sub-heading mt-8 px-6 text-center uppercase md:mt-16 md:text-start md:px-24 lg:px-32"
+      >
+        <span class="mr-4 text-blue-light">02</span>Meet your crew
+      </h1>
+
+      <section class="grid grid-cols-1 gap-4 px-6 pt-8 md:pt-16 md:px-24">
+        <!-- Tab Controls -->
+        <div
+          class="tabs flex items-center justify-center gap-8 row-start-2"
+          role="tablist"
+          aria-label="Crew member selection"
+        >
+          <button
+            class="w-3 h-3 rounded-full bg-white/20 cursor-pointer transition-colors duration-500 ease-in-out aria-[selected=true]:bg-white hover:bg-white/40"
+            id="commander"
+            role="tab"
+            aria-selected="true"
+            aria-controls="commander-content"
+            aria-label="Commander"
+            tabindex="0"
+          ></button>
+
+          <button
+            class="w-3 h-3 rounded-full bg-white/20 cursor-pointer transition-colors duration-500 ease-in-out aria-[selected=true]:bg-white hover:bg-white/40"
+            id="mission-specialist"
+            role="tab"
+            aria-selected="false"
+            aria-controls="specialist-content"
+            aria-label="Mission Specialist"
+            tabindex="-1"
+          ></button>
+
+          <button
+            class="w-3 h-3 rounded-full bg-white/20 cursor-pointer transition-colors duration-500 ease-in-out aria-[selected=true]:bg-white hover:bg-white/40"
+            id="pilot"
+            role="tab"
+            aria-selected="false"
+            aria-controls="pilot-panel"
+            aria-label="Pilot"
+            tabindex="-1"
+          ></button>
+
+          <button
+            class="w-3 h-3 rounded-full bg-white/20 cursor-pointer transition-colors duration-500 ease-in-out aria-[selected=true]:bg-white hover:bg-white/40"
+            id="flight-engineer"
+            role="tab"
+            aria-selected="false"
+            aria-controls="engineer-panel"
+            aria-label="Flight Engineer"
+            tabindex="-1"
+          ></button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="grid grid-cols-1 grid-rows-1 overflow-hidden">
+          <!-- Commander Panel -->
+          <div
+            class="col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform -translate-x-full opacity-0 data-[active=true]:translate-x-0 data-[active=true]:opacity-100"
+            data-active="true"
+            role="tabpanel"
+            aria-labelledby="commander-heading"
+            id="commander-content"
+            aria-hidden="false"
+          >
+            <h2
+              class="text-4xl text-center text-blue-light font-belliefair"
+              id="commander-heading"
+              class="text-2xl font-bold"
+            >
+              Commander
+            </h2>
+            <p class="mt-2 text-4xl font-belliefair text-center">Douglas Hurley</p>
+            <p class="mt-8 text-center text-blue-light">
+              Douglas Gerald Hurley is a United States Marine Corps officer and
+              a NASA astronaut. He was a pilot on the Space Shuttle Atlantis and
+              the last commander of the Space Shuttle program.
+            </p>
+          </div>
+
+          <!-- Mission Specialist Panel -->
+          <div
+            class="col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform -translate-x-full opacity-0 data-[active=true]:translate-x-0 data-[active=true]:opacity-100"
+            data-active="false"
+            role="tabpanel"
+            aria-labelledby="specialist-heading"
+            id="specialist-content"
+            aria-hidden="true"
+          >
+            <h2
+              class="text-4xl text-center text-blue-light font-belliefair"
+              id="specialist-heading"
+              class="text-2xl font-bold"
+            >
+              Mission Specialist
+            </h2>
+            <p class="mt-2 text-4xl font-belliefair text-center">Mark Shuttleworth</p>
+            <p class="mt-8 text-center text-blue-light">
+              Mark Richard Shuttleworth is the founder and CEO of Canonical, the
+              company behind the Linux-based Ubuntu operating system. He became
+              the first South African in space as a space tourist.
+            </p>
+          </div>
+
+          <!-- Pilot Panel -->
+          <div
+            class="col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform -translate-x-full opacity-0 data-[active=true]:translate-x-0 data-[active=true]:opacity-100"
+            data-active="false"
+            role="tabpanel"
+            aria-labelledby="pilot-heading"
+            id="pilot-panel"
+            aria-hidden="true"
+          >
+            <h2
+              class="text-4xl text-center text-blue-light font-belliefair"
+              id="pilot-heading"
+              class="text-2xl font-bold"
+            >
+              Pilot
+            </h2>
+            <p class="mt-2 text-4xl font-belliefair text-center">Victor Glover</p>
+            <p class="mt-8 text-center text-blue-light">
+              Pilot on the first operational flight of the SpaceX Crew Dragon to
+              the International Space Station. Glover is a commander in the U.S.
+              Navy where he pilots F/A–18s. He was a crew member of Expedition
+              64, and served as a station systems flight engineer.
+            </p>
+          </div>
+
+          <!-- Flight Engineer Panel -->
+          <div
+            class="col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform -translate-x-full opacity-0 data-[active=true]:translate-x-0 data-[active=true]:opacity-100"
+            data-active="false"
+            role="tabpanel"
+            aria-labelledby="engineer-heading"
+            id="engineer-panel"
+            aria-hidden="true"
+          >
+            <h2
+              class="text-4xl text-center text-blue-light font-belliefair"
+              id="engineer-heading"
+              class="text-2xl font-bold"
+            >
+              Flight Engineer
+            </h2>
+            <p class="mt-2 text-4xl font-belliefair text-center">Anousheh Ansari</p>
+            <p class="mt-8 text-center text-blue-light">
+              Anousheh Ansari is an Iranian American engineer and co-founder of
+              Prodea Systems. She was the fourth self-funded space tourist, and
+              the first Iranian in space.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab Images -->
+        <div class="tab-images grid grid-cols-1 grid-rows-1 overflow-hidden">
+          <div
+            class="flex items-end col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform translate-y-full opacity-0 data-[active=true]:translate-y-0 data-[active=true]:opacity-100"
+            data-active="true"
+            aria-role="tabpanel"
+            aria-labelledby="commander-heading"
+            aria-hidden="true"
+          >
+            <img
+              src="./assets/crew/image-douglas-hurley.png"
+              alt="Douglas Hurley"
+              class="w-full h-auto object-bottom"
+            />
+          </div>
+          <div
+            class="flex items-end col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform translate-y-full opacity-0 data-[active=true]:translate-y-0 data-[active=true]:opacity-100"
+            data-active="false"  
+            aria-role="tabpanel"
+            aria-labelledby="commander-heading"
+            aria-hidden="true"
+          >
+            <img
+              src="./assets/crew/image-mark-shuttleworth.webp"
+              alt="Mark Shuttleworth"
+              class="w-full h-auto object-bottom"
+            />
+          </div>
+          <div
+            class="flex items-end col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform translate-y-full opacity-0 data-[active=true]:translate-y-0 data-[active=true]:opacity-100"
+            data-active="false"  
+            aria-role="tabpanel"
+            aria-labelledby="commander-heading"
+            aria-hidden="true"
+          >
+            <img
+              src="./assets/crew/image-victor-glover.webp"
+              alt="Douglas Hurley"
+              class="w-full h-auto object-bottom"
+            />
+          </div>
+          <div
+            class="flex items-end col-start-1 col-end-1 row-start-1 transition-all duration-500 ease-in-out transform translate-y-full opacity-0 data-[active=true]:translate-y-0 data-[active=true]:opacity-100"
+            data-active="false"  
+            aria-role="tabpanel"
+            aria-labelledby="commander-heading"
+            aria-hidden="true"
+          >
+            <img
+              class="w-full h-auto object-bottom"
+              src="./assets/crew/image-anousheh-ansari.webp"
+              alt="Anousheh Ansari"
+            />
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>

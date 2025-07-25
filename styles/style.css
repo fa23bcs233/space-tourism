@@ -15,10 +15,15 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
@@ -187,6 +192,9 @@
   .col-start-1 {
     grid-column-start: 1;
   }
+  .col-start-2 {
+    grid-column-start: 2;
+  }
   .col-end-1 {
     grid-column-end: 1;
   }
@@ -196,6 +204,9 @@
   .row-start-1 {
     grid-row-start: 1;
   }
+  .row-start-2 {
+    grid-row-start: 2;
+  }
   .row-end-1 {
     grid-row-end: 1;
   }
@@ -204,6 +215,12 @@
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
@@ -220,17 +237,47 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
   .h-36 {
     height: calc(var(--spacing) * 36);
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;
   }
   .min-h-\[100vh\] {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-36 {
     width: calc(var(--spacing) * 36);
@@ -293,11 +340,26 @@
   .items-center {
     align-items: center;
   }
+  .items-end {
+    align-items: flex-end;
+  }
   .justify-center {
     justify-content: center;
   }
   .justify-items-center {
     justify-items: center;
+  }
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
@@ -318,17 +380,20 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-white\/20 {
+    background-color: color-mix(in srgb, hsl(0deg 0% 100%) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
+  .bg-\[url\(\'\.\.\/assets\/crew\/background-crew-mobile\.jpg\'\)\] {
+    background-image: url('../assets/crew/background-crew-mobile.jpg');
+  }
   .bg-\[url\(\'\.\.\/assets\/destination\/background-destination-mobile\.jpg\'\)\] {
     background-image: url('../assets/destination/background-destination-mobile.jpg');
   }
   .bg-\[url\(\'\.\.\/assets\/home\/background-home-mobile\.jpg\'\)\] {
     background-image: url('../assets/home/background-home-mobile.jpg');
-  }
-  .bg-\[url\(\'\/assets\/crew\/background-crew-mobile\.jpg\'\)\] {
-    background-image: url('/assets/crew/background-crew-mobile.jpg');
-  }
-  .bg-\[url\(\'\/assets\/destination\/background-destination-mobile\.jpg\'\)\] {
-    background-image: url('/assets/destination/background-destination-mobile.jpg');
   }
   .bg-\[url\(\'\/assets\/technology\/background-technology-mobile\.jpg\'\)\] {
     background-image: url('/assets/technology/background-technology-mobile.jpg');
@@ -345,6 +410,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-bottom {
+    object-position: bottom;
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -360,6 +428,9 @@
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
   }
@@ -372,9 +443,21 @@
   .font-belliefair {
     font-family: var(--font-belliefair);
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .text-blue-dark {
     color: var(--color-blue-dark);
@@ -390,6 +473,9 @@
   }
   .opacity-0 {
     opacity: 0%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .ring-0 {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
@@ -412,14 +498,28 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .transition-\[transform\,opacity\] {
+    transition-property: transform,opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-all {
     transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .duration-500 {
     --tw-duration: 500ms;
     transition-duration: 500ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .after\:absolute {
     &::after {
@@ -519,6 +619,16 @@
       transition-timing-function: var(--ease-in-out);
     }
   }
+  .hover\:bg-white\/40 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, hsl(0deg 0% 100%) 40%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 40%, transparent);
+        }
+      }
+    }
+  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
@@ -555,6 +665,11 @@
       }
     }
   }
+  .aria-\[selected\=true\]\:bg-white {
+    &[aria-selected="true"] {
+      background-color: var(--color-white);
+    }
+  }
   .data-\[active\=true\]\:translate-x-0 {
     &[data-active="true"] {
       --tw-translate-x: calc(var(--spacing) * 0);
@@ -570,6 +685,11 @@
   .data-\[active\=true\]\:text-white {
     &[data-active="true"] {
       color: var(--color-white);
+    }
+  }
+  .data-\[active\=true\]\:opacity-0 {
+    &[data-active="true"] {
+      opacity: 0%;
     }
   }
   .data-\[active\=true\]\:opacity-100 {
@@ -688,6 +808,11 @@
       row-gap: calc(var(--spacing) * 12);
     }
   }
+  .md\:bg-\[url\(\'\.\.\/assets\/crew\/background-crew-tablet\.jpg\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('../assets/crew/background-crew-tablet.jpg');
+    }
+  }
   .md\:bg-\[url\(\'\.\.\/assets\/destination\/background-destination-tablet\.jpg\'\)\] {
     @media (width >= 48rem) {
       background-image: url('../assets/destination/background-destination-tablet.jpg');
@@ -696,21 +821,6 @@
   .md\:bg-\[url\(\'\.\.\/assets\/home\/background-home-tablet\.jpg\'\)\] {
     @media (width >= 48rem) {
       background-image: url('../assets/home/background-home-tablet.jpg');
-    }
-  }
-  .md\:bg-\[url\(\'\/assets\/crew\/background-crew-tablet\.jpg\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('/assets/crew/background-crew-tablet.jpg');
-    }
-  }
-  .md\:bg-\[url\(\'\/assets\/destination\/background-destination-tablet\.jpg\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('/assets/destination/background-destination-tablet.jpg');
-    }
-  }
-  .md\:bg-\[url\(\'\/assets\/home\/background-home-tablet\.jpg\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('/assets/home/background-home-tablet.jpg');
     }
   }
   .md\:bg-\[url\(\'\/assets\/technology\/background-technology-tablet\.jpg\'\)\] {
@@ -723,6 +833,16 @@
       padding-inline: calc(var(--spacing) * 8);
     }
   }
+  .md\:px-12 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+  .md\:px-16 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 16);
+    }
+  }
   .md\:px-24 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 24);
@@ -731,6 +851,11 @@
   .md\:py-16 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 16);
+    }
+  }
+  .md\:pt-16 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 16);
     }
   }
   .md\:pt-32 {
@@ -788,11 +913,6 @@
       width: 100%;
     }
   }
-  .lg\:max-w-100 {
-    @media (width >= 64rem) {
-      max-width: calc(var(--spacing) * 100);
-    }
-  }
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -843,14 +963,9 @@
       align-self: center;
     }
   }
-  .lg\:justify-self-center {
+  .lg\:bg-\[url\(\'\.\.\/assets\/crew\/background-crew-desktop\.jpg\'\)\] {
     @media (width >= 64rem) {
-      justify-self: center;
-    }
-  }
-  .lg\:justify-self-end {
-    @media (width >= 64rem) {
-      justify-self: flex-end;
+      background-image: url('../assets/crew/background-crew-desktop.jpg');
     }
   }
   .lg\:bg-\[url\(\'\.\.\/assets\/destination\/background-destination-desktop\.jpg\'\)\] {
@@ -861,21 +976,6 @@
   .lg\:bg-\[url\(\'\.\.\/assets\/home\/background-home-desktop\.jpg\'\)\] {
     @media (width >= 64rem) {
       background-image: url('../assets/home/background-home-desktop.jpg');
-    }
-  }
-  .lg\:bg-\[url\(\'\/assets\/crew\/background-crew-desktop\.jpg\'\)\] {
-    @media (width >= 64rem) {
-      background-image: url('/assets/crew/background-crew-desktop.jpg');
-    }
-  }
-  .lg\:bg-\[url\(\'\/assets\/destination\/background-destination-desktop\.jpg\'\)\] {
-    @media (width >= 64rem) {
-      background-image: url('/assets/destination/background-destination-desktop.jpg');
-    }
-  }
-  .lg\:bg-\[url\(\'\/assets\/home\/background-home-desktop\.jpg\'\)\] {
-    @media (width >= 64rem) {
-      background-image: url('/assets/home/background-home-desktop.jpg');
     }
   }
   .lg\:bg-\[url\(\'\/assets\/technology\/background-technology-desktop\.jpg\'\)\] {
@@ -1334,6 +1434,10 @@ main {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -1444,20 +1548,16 @@ main {
   syntax: "*";
   inherits: false;
 }
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
   inherits: false;
 }
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
@@ -1473,6 +1573,7 @@ main {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -1498,10 +1599,9 @@ main {
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
-      --tw-content: "";
       --tw-ease: initial;
+      --tw-content: "";
       --tw-tracking: initial;
-      --tw-font-weight: initial;
     }
   }
 }
