@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Space tourism website</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./scripts/main.js"></script>
+  </head>
+  <body>
+    <main class="min-h-[100vh] bg-[url('/assets/home/background-home-mobile.jpg')] bg-center bg-no-repeat bg-cover md:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')]" >
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <div class="nav__logo">
+          <img src="./assets/shared/logo.svg" alt="logo" />
+        </div>
+
+        <div class="nav__toggler">
+          <button class="nav__menu__open"  type="button" aria-label="open menu">
+            <img src="./assets/shared/icon-hamburger.svg" alt="open menu" />
+          </button>
+        </div>
+
+        <div class="nav__menu nav__menu--active" aria-hidden="true">
+          <button class="nav__menu__close" type="button" aria-hidden="true" aria-label="close menu">
+            <img src="./assets/shared/icon-close.svg" alt="close menu" />
+          </button>
+          <ol role="menu">
+            <li class="active" ><a href="#">Home</a></li>
+            <li><a href="./destination.html">Destination</a></li>
+            <li><a href="./crew.html">Crew</a></li>
+            <li><a href="./technology.html">Technology</a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- Home Section -->
+      <section class="py-8 px-6 md:pt-32 md:px-8 lg:flex lg:items-stretch lg:px-36 lg:py-32" id="home" aria-labelledby="heading">
+        <div class="w-full content flex flex-col items-center lg:items-start">
+          <h2 class="sub-heading uppercase text-blue-light lg:text-start" >So You want to travel to</h2>
+          <h1 class="heading-main uppercase space pt-2 pb-4 lg:text-start lg:pt-0 lg:pb-0">Space</h1>
+          <p  class="text-center text-blue-light max-w-160 lg:text-start">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+          </p>
+        </div>
+        <div class="w-full flex justify-center items-baseline mt-40 lg:mt-0 lg:justify-end lg:items-end">
+          <a class="flex items-center justify-center font-belliefair uppercase text-blue-dark bg-white w-36 h-36 rounded-full ring-0 ring-white/20 cursor-pointer hover:ring-32 transition-all duration-500 md:w-48 md:h-48"
+            href="./destination.html"
+          >
+            Explore
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
