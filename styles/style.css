@@ -1147,15 +1147,15 @@
 }
 @font-face {
   font-family: BellieFair;
-  src: url(/assets/shared/font/Bellefair/Bellefair-Regular.ttf);
+  src: url(../assets/shared/font/Bellefair/Bellefair-Regular.ttf);
 }
 @font-face {
   font-family: BarlowCondensed;
-  src: url(/assets/shared/font/Barlow_Condensed/BarlowCondensed-Regular.ttf);
+  src: url(../assets/shared/font/Barlow_Condensed/BarlowCondensed-Regular.ttf);
 }
 @font-face {
   font-family: Barlow;
-  src: url(/assets/shared/font/Barlow/Barlow-Regular.ttf);
+  src: url(../assets/shared/font/Barlow/Barlow-Regular.ttf);
 }
 html, body {
   height: 100%;
