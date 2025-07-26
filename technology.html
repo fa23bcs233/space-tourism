@@ -1,38 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <script defer src="./scripts/main.js"></script>
-</head>
-<body>
-    <main class="min-h-[100vh] bg-[url('/assets/technology/background-technology-mobile.jpg')] bg-no-repeat bg-cover md:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')]" >
+  </head>
+  <body>
+    <main
+      class="min-h-[100vh] bg-[url('../assets/technology/background-technology-mobile.jpg')] bg-no-repeat bg-cover md:bg-[url('../assets/technology/background-technology-tablet.jpg')] lg:bg-[url('../assets/technology/background-technology-desktop.jpg')]"
+    >
       <!-- Nav Bar -->
       <nav class="nav">
-        <div class="nav__logo">
-          <img src="./assets/shared/logo.svg" alt="logo" />
+        <div class="n105__logo">
+          <img class="w-full h-full object-cover" src="./assets/shared/logo.svg" alt="logo" />
         </div>
 
         <div class="nav__toggler">
-          <button class="nav__menu__open"  type="button" aria-label="open menu">
+          <button class="nav__menu__open" type="button" aria-label="open menu">
             <img src="./assets/shared/icon-hamburger.svg" alt="open menu" />
           </button>
         </div>
 
         <div class="nav__menu nav__menu--active" aria-hidden="true">
-          <button class="nav__menu__close" type="button" aria-hidden="true" aria-label="close menu">
+          <button
+            class="nav__menu__close"
+            type="button"
+            aria-hidden="true"
+            aria-label="close menu"
+          >
             <img src="./assets/shared/icon-close.svg" alt="close menu" />
           </button>
           <ol role="menu">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./destination.html">Destination</a></li>
             <li><a href="./crew.html">Crew</a></li>
-            <li  class="active" ><a href="#">Technology</a></li>
+            <li class="active"><a href="#">Technology</a></li>
           </ol>
         </div>
       </nav>
+
+      <!-- Technology -->
+      <h1
+        class="sub-heading mt-8 px-6 text-center uppercase md:mt-16 md:text-start md:px-24 lg:px-32"
+      >
+        <span class="mr-4 text-blue-light">03</span>Space Launch 101
+      </h1>
+
+      <!-- Content -->
+      <section class="py-8 grid grid-cols-1 gap-y-8 lg:grid-cols-11 lg:pl-32">
+        <!-- Tabs -->
+        <div class="flex justify-center items-center gap-8 row-start-2 lg:col-start-1 lg:row-start-1 lg:flex-col " role="tablist">
+          <button
+            class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
+            tab-index="0"
+            role="tab"
+            id="technology-1-tab"
+            aria-controls="tech-1"
+            aria-selected="true"
+            aria-labelledby="technology-1"
+          >
+            1
+          </button>
+          <button
+            class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
+            tab-index="-1"
+            role="tab"
+            id="technology-2-tab"
+            aria-controls="tech-2"
+            aria-selected="false"
+            aria-labelledby="technology-2"
+          >
+            2
+          </button>
+          <button
+            class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
+            tab-index="-1"
+            role="tab"
+            id="technology-3-tab"
+            aria-controls="tech-3"
+            aria-selected="false"
+            aria-labelledby="technology-3"
+          >
+            3
+          </button>
+        </div>
+
+        <!-- Tab Images -->
+        <div class="tab-images grid grid-cols-1 grid-rows-1 overflow-hidden lg:col-start-7  lg:col-span-5">
+         <div class="col-start-1 col-end-1 row-start-1 row-end-2 transform -translate-x-full data-[active=true]:translate-x-0 data-[active=true]:transition-all data-[active=true]:duration-500 data-[active=true]:ease-in-out data-[outgoing=true]:translate-x-full data-[outgoing=true]:duration-500 data-[outgoing=true]:ease-in-out" data-active="true"  data-outgoing="false" id="tab-image-1" role="tabpanel" aria-labelledby="technology-1" aria-hidden="true">
+          <picture class="w-full h-full object-cover" >
+            <source srcset="./assets/technology/image-launch-vehicle-landscape.jpg" media="(max-width: 1050px)" />
+            <img class="w-full h-full object-cover" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="launch vehicle">
+          </picture>
+         </div>
+         <div class="col-start-1 col-end-1 row-start-1 row-end-2 transform -translate-x-full data-[active=true]:translate-x-0 data-[active=true]:transition-all data-[active=true]:duration-500 data-[active=true]:ease-in-out data-[outgoing=true]:translate-x-full data-[outgoing=true]:duration-500 data-[outgoing=true]:ease-in-out" data-active="false" data-outgoing="false"  id="tab-image-2" role="tabpanel" aria-labelledby="technology-2" aria-hidden="true">
+          <picture class="w-full h-full object-cover" >
+            <source srcset="./assets/technology/image-spaceport-landscape.jpg" media="(max-width: 1050px)" />
+            <img class="w-full h-full object-cover" src="./assets/technology/image-spaceport-portrait.jpg" alt="spaceport">
+          </picture>
+         </div>
+         <div class="col-start-1 col-end-1 row-start-1 row-end-2 transform -translate-x-full data-[active=true]:translate-x-0 data-[active=true]:transition-all data-[active=true]:duration-500 data-[active=true]:ease-in-out data-[outgoing=true]:translate-x-full data-[outgoing=true]:duration-500 data-[outgoing=true]:ease-in-out" data-active="false" data-outgoing="false"  id="tab-image-3" role="tabpanel" aria-labelledby="technology-3" aria-hidden="true">
+          <picture class="w-full h-full object-cover" >
+            <source srcset="./assets/technology/image-space-capsule-landscape.jpg" media="(max-width: 1050px)" />
+            <img class="w-full h-full object-cover" src="./assets/technology/image-space-capsule-portrait.jpg" alt="space capsule">
+          </picture>
+         </div>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="tab-panels grid grid-cols-1 grid-rows-1 items-center lg:col-start-2 lg:row-start-1 lg:col-span-5">
+          <div
+            class="col-start-1 row-start-1 px-12 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out data-[active=true]:opacity-100 data-[active=true]:pointer-events-auto"
+            data-active="true"
+            id="tech-1"
+            role="tabpanel"
+            aria-labelledby="technology-1"
+            aria-hidden="false"
+          >
+            <p
+              class="text-4xl text-center text-blue-light font-belliefair lg:text-start"
+            >
+              The terminology...
+            </p>
+            <h2
+              class="mt-2 text-4xl font-belliefair text-center lg:text-start lg:text-6xl"
+              id="technology-1"
+            >
+              Launch vehicle
+            </h2>
+            <p class="mt-8 text-center text-blue-light lg:text-start lg:text-lg" >
+              A launch vehicle or carrier rocket is a rocket-propelled vehicle
+              used to carry a payload from Earth's surface to space, usually to
+              Earth orbit or beyond. Our WEB-X carrier rocket is the most
+              powerful in operation. Standing 150 metres tall, it's quite an
+              awe-inspiring sight on the launch pad!
+            </p>
+          </div>
+          <div
+            class="col-start-1 row-start-1 px-12 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out data-[active=true]:opacity-100 data-[active=true]:pointer-events-auto"
+            data-active="false"
+            id="tech-2"
+            role="tabpanel"
+            aria-labelledby="technology-2"
+            aria-hidden="false"
+          >
+            <p
+              class="text-4xl text-center text-blue-light font-belliefair lg:text-start lg:text-6xl"
+            >
+              The terminology...
+            </p>
+            <h2
+              class="mt-2 text-4xl font-belliefair text-center lg:text-start lg:text-6xl"
+              id="technology-2"
+            >
+              Spaceport
+            </h2>
+            <p class="mt-8 text-center text-blue-light lg:text-start lg:text-lg" >
+              A spaceport or cosmodrome is a site for launching (or receiving)
+              spacecraft, by analogy to the seaport for ships or airport for
+              aircraft. Based in the famous Cape Canaveral, our spaceport is
+              ideally situated to take advantage of the Earth’s rotation for
+              launch.
+            </p>
+          </div>
+          <div
+            class="col-start-1 row-start-1 px-12 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out data-[active=true]:opacity-100 data-[active=true]:pointer-events-auto"
+            data-active="false"
+            id="tech-2"
+            role="tabpanel"
+            aria-labelledby="technology-2"
+            aria-hidden="false"
+          >
+            <p
+              class="text-4xl text-center text-blue-light font-belliefair lg:text-start lg:text-6xl"
+            >
+              The terminology...
+            </p>
+            <h2
+              class="mt-2 text-4xl font-belliefair text-center lg:text-start lg:text-6xl"
+              id="technology-2"
+            >
+              Space capsule
+            </h2>
+            <p class="mt-8 text-center text-blue-light lg:text-start lg:text-lg" >
+              A space capsule is an often-crewed spacecraft that uses a
+              blunt-body reentry capsule to reenter the Earth's atmosphere
+              without wings. Our capsule is where you'll spend your time during
+              the flight. It includes a space gym, cinema, and plenty of other
+              activities to keep you entertained.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
