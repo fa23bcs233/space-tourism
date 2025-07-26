@@ -1,9 +1,3 @@
-crew-*.html
-technology-*.html
-data.json
-package*.json
-/styles/input.css
-
 # Design files (please do not remove 🙂)
 *.sketch
 *.fig

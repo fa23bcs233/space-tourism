@@ -1,0 +1,143 @@
+/* Not Need for the actual deployment of the project as the styling is already in the product ready style.css file just uploaded for the reference */
+@import "tailwindcss";
+
+@font-face {
+  font-family: BellieFair;
+  src: url(/assets/shared/font/Bellefair/Bellefair-Regular.ttf);
+}
+
+@font-face {
+  font-family: BarlowCondensed;
+  src: url(/assets/shared/font/Barlow_Condensed/BarlowCondensed-Regular.ttf);
+}
+
+@font-face {
+  font-family: Barlow;
+  src: url(/assets/shared/font/Barlow/Barlow-Regular.ttf);
+}
+
+@theme {
+  --color-blue-dark: hsl(235deg 35% 7%);
+  --color-blue-light: hsl(231deg 77% 90%);
+  --color-white: hsl(0deg 0% 100%);
+  --font-barlow: Barlow;
+  --font-belliefair: BellieFair;
+  --font-barlowCondensed: BarlowCondensed;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: Barlow;
+  font-size: 15px;
+  color: var(--color-white);
+  @apply md:text-lg
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.heading-main {
+  @apply font-belliefair text-[56px] md:text-[100px] lg:text-[144px];
+}
+
+.heading-section {
+  @apply font-belliefair text-6xl;
+}
+
+.sub-heading {
+  @apply font-barlowCondensed text-[20px] tracking-[2px] md:text-[28px] lg:tracking-[4px];
+  
+}
+
+.distance {
+  @apply font-belliefair text-3xl;
+}
+
+.caption {
+  @apply font-barlowCondensed text-lg tracking-wider;
+}
+
+.tab {
+  @apply font-barlowCondensed text-lg tracking-widest;
+}
+
+/*********** Custom Components ********/
+.nav {
+  @apply flex items-center justify-between w-full px-6 py-4 relative md:pl-8 md:gap-8 md:pr-0 md:py-0 lg:pl-16 lg:py-12;
+
+  .nav__logo {
+    @apply w-9 lg:w-10;
+  }
+
+  .nav__toggler {
+    @apply md:hidden;
+  }
+
+  .nav__toggler button img {
+    @apply w-6 cursor-pointer;
+  }
+
+  .nav__menu {
+    @apply absolute right-0 top-0 h-screen w-70 z-10 bg-white/15 backdrop-blur-md py-4  opacity-0  transform translate-x-full transition-all duration-500 ease-in-out md:static md:h-fit md:translate-0 md:opacity-100 md:py-0 md:px-4 md:w-full lg:relative lg:w-fit lg:pl-20 lg:pr-32 lg:before:absolute lg:before:top-1/2 lg:before:left-[-54%] lg:before:h-0.25 lg:before:w-3/5 lg:before:bg-blue-light/25;
+  }
+
+  .nav__menu--active {
+    @apply translate-x-0 opacity-100 before:block before:fixed before:w-full before:h-full before:bg-white/10 before:-z-2 before:top-0 before:-left-full;
+  }
+
+  .nav__menu__close {
+    @apply float-right mr-8 cursor-pointer md:hidden;
+  }
+
+  .nav__menu ol {
+    @apply flex flex-col items-start justify-start gap-8 mt-20 md:flex-row md:items-center md:mt-0 md:justify-end md:gap-6 md:w-full;
+    counter-reset: item -1;
+  }
+
+  .nav__menu li{
+    @apply text-xl font-barlowCondensed uppercase text-blue-light hover:text-white transition-colors duration-300 tracking-widest pl-8 relative w-full cursor-pointer overflow-hidden md:px-0 md:w-fit;
+  }
+
+
+  .nav__menu li a::before {
+    @apply inline-block mr-4 text-white font-barlowCondensed font-extrabold w-fit;
+    content: "0"counter(item);
+    counter-increment: item;
+  }
+
+
+  .nav__menu li a{
+    @apply block w-full md:w-fit h-full md:py-8 focus-visible:outline-none;
+  }
+
+
+  .nav__menu li::after {
+    content: " ";
+    @apply w-1 h-full bg-white  absolute bottom-0 right-0 rounded-2xl transition-transform transform -translate-y-full duration-500 ease-in-out md:h-2 md:w-full md:-translate-y-0 md:-translate-x-full;
+  }
+
+  .nav__menu li:has(a:focus-visible){
+    @apply outline-2 outline-blue-light/50;
+  }
+
+  .nav__menu li:has(a:focus-visible)::after,
+  .nav__menu li:hover::after,
+  .nav__menu li.active::after {
+    @apply -translate-y-0 md:-translate-x-0; 
+  }
+}
+
+/***** For reduce Motion ****/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    @apply transition-none duration-0;
+    animation-duration: 0s;
+  }
+}

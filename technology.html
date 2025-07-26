@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <script defer src="./scripts/main.js"></script>
   </head>
   <body>
     <main
@@ -54,7 +53,7 @@
         <div class="flex justify-center items-center gap-8 row-start-2 lg:col-start-1 lg:row-start-1 lg:flex-col " role="tablist">
           <button
             class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
-            tab-index="0"
+            tabindex="0"
             role="tab"
             id="technology-1-tab"
             aria-controls="tech-1"
@@ -65,7 +64,7 @@
           </button>
           <button
             class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
-            tab-index="-1"
+            tabindex="-1"
             role="tab"
             id="technology-2-tab"
             aria-controls="tech-2"
@@ -76,7 +75,7 @@
           </button>
           <button
             class="text-3xl font-bold w-12 h-12 rounded-full ring ring-white aria-selected:bg-white aria-selected:text-blue-dark hover:bg-white/50 cursor-pointer focus-visible:bg-white/50 lg:w-20 lg:h-20"
-            tab-index="-1"
+            tabindex="-1"
             role="tab"
             id="technology-3-tab"
             aria-controls="tech-3"
@@ -168,7 +167,7 @@
           <div
             class="col-start-1 row-start-1 px-12 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out data-[active=true]:opacity-100 data-[active=true]:pointer-events-auto"
             data-active="false"
-            id="tech-2"
+            id="tech-3"
             role="tabpanel"
             aria-labelledby="technology-2"
             aria-hidden="false"
@@ -195,5 +194,10 @@
         </div>
       </section>
     </main>
+
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/tab.js"></script>
+    <script src="./scripts/technology.js"></script>
   </body>
 </html>

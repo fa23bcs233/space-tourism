@@ -232,8 +232,11 @@
   .grid {
     display: grid;
   }
-  .h-3 {
-    height: calc(var(--spacing) * 3);
+  .hidden {
+    display: none;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-12 {
     height: calc(var(--spacing) * 12);
@@ -250,8 +253,8 @@
   .min-h-\[100vh\] {
     min-height: 100vh;
   }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
@@ -449,6 +452,11 @@
       --tw-ring-color: color-mix(in oklab, var(--color-white) 20%, transparent);
     }
   }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -597,6 +605,12 @@
       transition-timing-function: var(--ease-in-out);
     }
   }
+  .focus-within\:ring-32 {
+    &:focus-within {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(32px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
   .hover\:bg-white\/40 {
     &:hover {
       @media (hover: hover) {
@@ -658,6 +672,15 @@
       background-color: color-mix(in srgb, hsl(0deg 0% 100%) 50%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+      }
+    }
+  }
+  .focus-visible\:after\:translate-x-0 {
+    &:focus-visible {
+      &::after {
+        content: var(--tw-content);
+        --tw-translate-x: calc(var(--spacing) * 0);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
       }
     }
   }
@@ -929,6 +952,11 @@
       display: flex;
     }
   }
+  .lg\:h-5 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 5);
+    }
+  }
   .lg\:h-20 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 20);
@@ -937,6 +965,11 @@
   .lg\:h-full {
     @media (width >= 64rem) {
       height: 100%;
+    }
+  }
+  .lg\:w-5 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 5);
     }
   }
   .lg\:w-20 {
@@ -1138,7 +1171,7 @@ html, body {
 }
 main {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .heading-main {
   font-family: var(--font-belliefair);
@@ -1333,6 +1366,41 @@ main {
     --tw-translate-x: calc(var(--spacing) * 0);
     translate: var(--tw-translate-x) var(--tw-translate-y);
     opacity: 100%;
+    &::before {
+      content: var(--tw-content);
+      position: fixed;
+    }
+    &::before {
+      content: var(--tw-content);
+      top: calc(var(--spacing) * 0);
+    }
+    &::before {
+      content: var(--tw-content);
+      left: -100%;
+    }
+    &::before {
+      content: var(--tw-content);
+      z-index: calc(2 * -1);
+    }
+    &::before {
+      content: var(--tw-content);
+      display: block;
+    }
+    &::before {
+      content: var(--tw-content);
+      height: 100%;
+    }
+    &::before {
+      content: var(--tw-content);
+      width: 100%;
+    }
+    &::before {
+      content: var(--tw-content);
+      background-color: color-mix(in srgb, hsl(0deg 0% 100%) 10%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+      }
+    }
   }
   .nav__menu__close {
     float: right;
@@ -1414,6 +1482,10 @@ main {
     display: block;
     height: 100%;
     width: 100%;
+    &:focus-visible {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
     @media (width >= 48rem) {
       width: fit-content;
     }
