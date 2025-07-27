@@ -226,6 +226,9 @@
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
+  .contents {
+    display: contents;
+  }
   .flex {
     display: flex;
   }
